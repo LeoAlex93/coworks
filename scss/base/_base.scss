@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:300,regular,700,800);
+
+html {
+    scroll-behavior: smooth; // Плавная прокрутка к секциям страницы
+}
+
+body {
+    font-family: 'Manrope',sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    color: #000;
+
+}
+
+a {
+    color: #00AE6C;
+    text-decoration: underline;
+}
+
+a:focus,
+button:focus {
+    outline-offset: 1px;
+    outline: #005fcc auto 1px; // Через кнопку Tab выделяет ссылки и кнопки синей рамкой
+}
+
+.container {
+    width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+
+    // @media(max-width:1220px) {
+    //     width: 768px;
+    // }
+
+@include tablet {
+     width: 768px;
+    }
+    // @media(max-width:788px) {
+    //     width: 360px;
+    // }
+
+@include mobile {
+    width: 360px;
+    }
+
+    &--large {
+        max-width: 1510px;
+        width: 100%;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &--mobile-fluid {
+        @include mobile {
+            width: auto;
+        }
+    }
+}
+
+
+
+.title-section {
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 1.2;
+    color: #000;
+
+    @include tablet {
+        font-size: 32px;
+    }
+
+    @include mobile {
+        font-size: 24px;
+    }
+}
+
+
+.visible-desktop {
+
+   @include tablet {
+        display: none;
+    }
+}
+
+.visually-hidden { /* Скрывает элементы но оставляет их рабочими */
+    clip: rect(0 0 0 0); /* Clip является устаревшим и используется для старых браузеров, валидатор выдаёт предупреждение */
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .no-scroll {
+    overflow-y: hidden;
+  }

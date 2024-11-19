@@ -1,0 +1,40 @@
+.realy-checkbox {
+
+}
+
+.fake-checkbox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: all 0.2s ease-in;
+
+}
+
+.fake-checkbox::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0); // Масштабируем изначально галочку  в положение 0
+    transition: all 0.2s ease-in; // Анимация
+    width: 16px;
+    height: 13px;
+    background-image: url('./../img/icons/tick.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.realy-checkbox:checked + .fake-checkbox {
+    background-color:#000;
+    border: 1px solid #000;
+} 
+
+.realy-checkbox:checked + .fake-checkbox::after {
+    transform: translate(-50%, -50%) scale(1); //  Здесь масштаб в 1, получается плавная анимация при помощи transition
+
+}

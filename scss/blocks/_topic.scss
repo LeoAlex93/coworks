@@ -1,0 +1,98 @@
+.topic {
+    padding: 30px 0;
+    border-top: 1px solid #ECECF1;
+    border-bottom: 1px solid #ECECF1;
+
+    @include tablet {
+    padding: 17px 0;
+
+    }
+
+    @include mobile {
+        padding: 15px 0;
+    }
+}
+
+.topic + .topic {
+    margin-top: -1px; //Чтобы серые полосы не накладывались друг на друга
+}
+
+.topic__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1;
+    color: #000;
+
+    @include mobile {
+        font-size: 18px;
+    }
+}
+
+.topic__btn {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    width: 100%;
+    align-items: center;
+
+    /* Hover */
+
+    &:hover:not(:focus-visible) {
+        opacity: 0.5;
+    }
+
+    /* Active */
+
+    &:active:not(:focus-visible) .topic__title {
+        color: #00AE6C;
+    }
+
+    /* Focus reset */
+
+    &:focus {
+        outline: none;
+    }
+
+    /* Focus only */
+
+    &:focus-visible {
+        outline-offset: 1px;
+        outline: #005fcc auto 1px;
+    }
+
+}
+
+.topic__content {
+    line-height: 1.5;
+
+    max-height: 0; // Более плавное открытие блоков
+    overflow: hidden; // Более плавное открытие блоков
+    transition: all 0.4s ease-in; // Более плавное открытие блоков
+
+
+    @include mobile {
+        padding-top: 13px;
+        font-size: 14px;
+    }
+}
+
+.topic__content-padding {
+    padding-top: 30px;
+
+    p + p {
+        margin-top: 1em;
+    }
+}
+
+
+    /* VAR1 */
+// .topic--open .topic__content {
+//     display: flex;
+// }
+
+.topic__icon {
+    @include mobile {
+     width: 32px;
+     height: 32px;
+    }
+}

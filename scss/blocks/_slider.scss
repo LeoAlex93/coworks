@@ -1,0 +1,24 @@
+.slider {
+    img {
+        border-radius: 8px;
+        object-fit: cover;
+        max-width: unset !important;
+        // height: unset !important;
+        height: 400px !important;
+
+        @include mobile {
+        height: 250px !important;
+            
+        }
+    }
+
+    // overflow: hidden; //Чтобы контент(картинки) не выходил за пределы контейнера.
+    // display: flex;
+    // column-gap: 10px;
+
+}
+
+
+.slider > *:first-child {
+    padding-left: 15px;
+}

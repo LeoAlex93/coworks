@@ -1,0 +1,54 @@
+.price {
+    padding: 60px 0 120px;
+    background-color: #F6F6F6;
+
+    @include tablet {
+        padding: 60px 0 80px;
+        
+    }
+
+    @include mobile {
+        padding: 40px 0 60px;
+        
+    }
+}
+
+
+.price__title {
+    margin-bottom: 40px;
+
+    @include mobile {
+    margin-bottom: 20px;
+        
+    }
+}
+
+.price__cards {
+    display: flex;
+    column-gap: 30px;
+    // align-items: flex-start; //Карточки будут равняться по вверхней границе
+    align-items: stretch;
+    flex-wrap: wrap;
+    row-gap: 50px;
+
+    @include mobile {
+    row-gap: 30px;
+        
+    }
+
+    & > * { //.price__cards идёт обращение к элементу(дочернему) первого уровня .card, вместо * можно прописать div или section, тогда будут выбраны они.
+        flex: 1; //Размер всех карточек будет одинаковый.
+        
+        @include tablet {
+            min-width: 354px;
+        }
+
+        @include mobile {
+            min-width: unset;
+        }
+
+    }
+
+   
+}
+
